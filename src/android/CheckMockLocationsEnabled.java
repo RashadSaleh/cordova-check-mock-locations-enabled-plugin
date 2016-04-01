@@ -7,9 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
-* This class echoes a string called from JavaScript.
-*/
+import 	android.provider.Settings;
+
 public class CheckMockLocationsEnabled extends CordovaPlugin {
 
     @Override
@@ -23,10 +22,10 @@ public class CheckMockLocationsEnabled extends CordovaPlugin {
     
     private void check(CallbackContext callbackContext) {
       try {
-          if (Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")) {
-              callbackContext.success(true);
+          if (Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")) {
+              callbackContext.success(1);
           } else {
-              callbackContext.success(false);
+              callbackContext.success(0);
           }
       } catch (Exception e) {
         callbackContext.error(e.getMessage());
