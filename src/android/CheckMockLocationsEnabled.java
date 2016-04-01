@@ -12,23 +12,24 @@ import org.json.JSONObject;
 */
 public class CheckMockLocationsEnabled extends CordovaPlugin {
 
-@Override
-public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    if (action.equals("check")) {
-        this.check(callbackContext);
-        return true;
+    @Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("check")) {
+            this.check(callbackContext);
+            return true;
+        }
+        return false;
     }
-    return false;
-}
-
-private void check(CallbackContext callbackContext) {
-  try {
-      if (Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")) {
-          callbackContext.success(true);
-      } else {
-          callbackContext.success(false);
+    
+    private void check(CallbackContext callbackContext) {
+      try {
+          if (Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")) {
+              callbackContext.success(true);
+          } else {
+              callbackContext.success(false);
+          }
+      } catch (Exception e) {
+        callbackContext.error(e.getMessage());
       }
-  } catch (Exception e) {
-    callbackContext.error(e.getMessage());
-  }
+    }
 }
