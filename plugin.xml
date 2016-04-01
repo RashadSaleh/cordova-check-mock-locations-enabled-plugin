@@ -30,9 +30,9 @@
 
   <!-- android -->
   <platform name="android">
-    <config-file target="config.xml" parent="/*">
-        <feature name="cordova-check-mock-locations-enabled-plugin">
-            <param name="android-package" value="com.shubbak.plugins.CMLE"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="CheckMockLocationsEnabled">
+            <param name="android-package" value="com.shubbak.plugins.CheckMockLocationsEnabled"/>
         </feature>
     </config-file>
 
