@@ -24,8 +24,8 @@
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
 
-  <js-module src="www/CMLE.js" name="CMLE">
-    <clobbers target="window.plugins.cml" />
+  <js-module src="www/CheckMockLocationsEnabled.js" name="CheckMockLocationsEnabled">
+    <clobbers target="CheckMockLocationsEnabled" />
   </js-module>
 
   <!-- android -->
