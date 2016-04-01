@@ -1,0 +1,1 @@
+# cordova-check-mock-locations-enabled-plugin
