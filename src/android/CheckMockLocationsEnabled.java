@@ -1,4 +1,4 @@
-package org.apache.cordova.plugin;
+package com.shubbak.plugins;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -13,15 +13,15 @@ public class CheckMockLocationsEnabled extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        callbackContext.success(1);
-        return true;
-        /*
-        //if (action.equals("check")) {
+        /*callbackContext.success(1);
+        return true;*/
+        
+        if (action.equals("check")) {
             this.check(callbackContext);
             return true;
-        //}
-        //return false;
-        */
+        }
+        return false;
+        
     }
     
     private void check(CallbackContext callbackContext) {
