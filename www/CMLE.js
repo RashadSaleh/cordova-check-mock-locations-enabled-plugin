@@ -2,8 +2,19 @@ cordova.define("cordova-check-mock-locations-enabled-plugin.CMLE", function (req
     function CMLE() {
     }
     
-    CMLE.prototype.check = function (successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "CheckMockLocationsEnabled", "check", []);
+    CMLE.prototype.check = function (callback) {
+        cordova.exec(
+            function(result) {
+                if (result == 1) {
+                    callback(true);
+                } else {
+                    callback(false);
+                }
+            }, 
+            function(error) {
+                console.log(error);
+            },
+            "CheckMockLocationsEnabled", "check", []);
     };
 
     CMLE.install = function () {
