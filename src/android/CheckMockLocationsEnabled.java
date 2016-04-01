@@ -27,9 +27,9 @@ public class CheckMockLocationsEnabled extends CordovaPlugin {
     private void check(CallbackContext callbackContext) {
       try {
           if (Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0")) {
-              callbackContext.success(1);
-          } else {
               callbackContext.success(0);
+          } else {
+              callbackContext.success(1);
           }
       } catch (Exception e) {
         callbackContext.error(e.getMessage());
