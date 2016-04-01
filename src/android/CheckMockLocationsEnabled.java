@@ -13,11 +13,11 @@ public class CheckMockLocationsEnabled extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("check")) {
+        //if (action.equals("check")) {
             this.check(callbackContext);
             return true;
-        }
-        return false;
+        //}
+        //return false;
     }
     
     private void check(CallbackContext callbackContext) {
