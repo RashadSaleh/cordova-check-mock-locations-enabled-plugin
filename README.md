@@ -1,6 +1,6 @@
 # cordova-check-mock-locations-enabled-plugin
 
-A plugin to detect if "Allow Mock Locations" is enabled on *Android* phones.
+A plugin to detect if "Allow Mock Locations" is enabled on <strong><bold>Android</bold></strong> phones.
 
 How to use:
 ```javascript
