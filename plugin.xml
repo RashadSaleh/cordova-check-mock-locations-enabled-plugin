@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-check-mock-locations-enabled-plugin"
+        version="0.1.0">
+
+  <name>Cordova Check Mock Locations Enabled</name>
+
+  <description>
+    Check whether mock locations are enabled on the device or not.
+  </description>
+
+  <author>Rashad Saleh</author>
+
+  <license>MIT</license>
+
+  <keywords>Mock locations, Fake location, Fake GPS</keywords>
+
+  <repo>https://github.com/RashadSaleh/cordova-check-mock-locations-enabled-plugin.git</repo>
+
+  <issue>https://github.com/RashadSaleh/cordova-check-mock-locations-enabled-plugin/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/CMLE.js" name="CMLE">
+    <clobbers target="window.plugins.cml" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="config.xml" parent="/*">
+        <feature name="cordova-check-mock-locations-enabled-plugin">
+            <param name="android-package" value="com.shubbak.plugins.CMLE"/>
+        </feature>
+    </config-file>
+
+    <source-file src="src/android/CheckMockLocationsEnabled.java" target-dir="src/com/shubbak/plugins/" />
+  </platform>
+  
+</plugin>
